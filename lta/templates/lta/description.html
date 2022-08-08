@@ -1,0 +1,13 @@
+{% extends 'lta/main.html' %}
+
+{% block content %}
+<div>
+                <form action="" method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+               
+				              {{ descriptionform.as_p }}
+			                	<input type="submit" value="Submit">
+				
+</form>
+
+{% endblock %}

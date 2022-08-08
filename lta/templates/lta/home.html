@@ -1,0 +1,31 @@
+{% extends 'lta/main.html' %}
+
+{% block content %}
+
+				<div class="container">
+								<div class="img-container">
+												<img class="img" src="link.jpg" alt=""></img>
+								</div>
+								<div class="text">
+								                {% for link in links %}
+												
+												<a href="{% url 'description' %}">Edit Description</a>
+								</div>
+								
+												<ul class="links">
+																<li class="link"><a href="{{link.url}}">{{link.name}}</a></li><br>
+																<a href="{% url 'updatelink' link.id %}">Edit Link</a> <a href="{% url 'deletelink' link.id %}">Delete Link</a>
+																<hr>									
+												</ul>
+								{% empty %}
+												<ul>
+																<li>No links</li>	
+												</ul>										
+								{% endfor %}
+								<a href="{% url 'addlink' %}">Add link</a>
+								</div>
+								<a href="">Preview </a> --> 
+{% endblock %}								
+</body>
+</html>
+
