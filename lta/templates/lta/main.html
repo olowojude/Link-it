@@ -1,13 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-				<meta charset="UTF-8">
-				<title>LinkTree clone</title>
-</head>
-<body>
-                {% include "lta/navbar.html" %}		
-				{% block content %}
-				
-				{% endblock %}
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>LinkTree clone</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/style.css' %}"
+    />
+  </head>
+  <body>
+    {% include "lta/navbar.html" %} {% block content %} {% endblock %}
+  </body>
 </html>

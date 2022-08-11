@@ -1,31 +1,21 @@
-{% extends 'lta/main.html' %}
-
-{% block content %}
+{% extends 'lta/main.html' %} {% block content %}
 <div>
-                <form action="" method="POST">
-       						{% csrf_token %}
-                				{{ registerform.username.label }}
-                				{{ registerform.username }}<br>
-                				
-                				{{ registerform.email.label }}	
-                				{{ registerform.email }}<br>
-                				
-                				
-                				{{ registerform.password1.label }}
-                				{{ registerform.password1 }}<br>
-                				
-                				
-                				{{ registerform.password2.label }}
-                				{{ registerform.password2 }}<br>	            		          
-			                	<input type="submit" value="Submit">
-			                	
-			                	{{ registerform.errors }}
-			                	<div>
-			                	                <p>Already have an account? <a href="{% url 'loginpage' %}">Login</a></p>
-			                	</div>
-				
-</form>
+  <form action="" method="POST">
+    {% csrf_token %} {{ registerform.username.label }} {{ registerform.username
+    }}<br />
 
-{% endblock %}
+    {{ registerform.email.label }} {{ registerform.email }}<br />
 
- 
+    {{ registerform.password1.label }} {{ registerform.password1 }}<br />
+
+    {{ registerform.password2.label }} {{ registerform.password2 }}<br />
+    <input type="submit" value="Submit" />
+
+    {{ registerform.errors }}
+  </form>
+  <div>
+    <p>Already have an account? <a href="{% url 'loginpage' %}">Login</a></p>
+  </div>
+
+  {% endblock %}
+</div>

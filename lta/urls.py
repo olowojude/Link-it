@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
 
@@ -22,6 +23,9 @@ urlpatterns = [
     
    path("description/", views.description, name = "description"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+
 #url(r'^profile_view/(?P<username>\w+)/$', 
                        #profile_view,
                      #  name='profile_view'),

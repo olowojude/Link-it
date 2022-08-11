@@ -1,14 +1,9 @@
- {% extends 'lta/main.html' %}
-
-{% block content %}
+{% extends 'lta/main.html' %} {% block content %}
 <div>
-                <form action="" method="POST">
-                {% csrf_token %}
-				                {{ updatelinkform.as_p }}
-			                	<input type="submit" value="Submit">
-				
-</form>
+  <form action="" method="POST">
+    {% csrf_token %} {{ updatelinkform.as_p }}
+    <input type="submit" value="Submit" />
+  </form>
 
-{% endblock %}
-
- 
+  {% endblock %}
+</div>

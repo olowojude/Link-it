@@ -1,28 +1,36 @@
- {% extends 'lta/main.html' %}
-
-{% block content %}
+{% extends 'lta/main.html' %} {% block content %}
 <div>
-                <form action="" method="POST">
-       						{% csrf_token %}
-                				<label>Username:</label>
-												<input type="text" name="username" placeholder="Enter Username..." id="username"><br>
-												
-												<label>Password:</label>
-												<input type="password" name="password" placeholder="Enter Password.." id="password"><br>				            
-			                	<input type="submit" value="Login">
-			                	
-			                	<div>
-			                	                {% for message in messages %}
-			                	                                <li class="messages">{{ message }} </li>
-			                	                {% endfor %}                
-			                	</div>
-			                	
-			                	<div>
-			                	                 <p>Don't have an account yet? <a href="{% url 'register' %}"> Create account </a></p>              
-			                	</div>		                
-				
-</form>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <label>Username:</label>
+    <input
+      type="text"
+      name="username"
+      placeholder="Enter Username..."
+      id="username"
+    /><br />
 
-{% endblock %}
+    <label>Password:</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Enter Password.."
+      id="password"
+    /><br />
+    <input type="submit" value="Login" />
+  </form>
+  <div>
+    {% for message in messages %}
+    <li class="messages">{{ message }}</li>
+    {% endfor %}
+  </div>
 
- 
+  <div>
+    <p>
+      Don't have an account yet?
+      <a href="{% url 'register' %}"> Create account </a>
+    </p>
+  </div>
+
+  {% endblock %}
+</div>
