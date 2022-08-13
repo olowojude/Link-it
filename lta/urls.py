@@ -18,10 +18,6 @@ urlpatterns = [
     
     
     path("register/", views.register, name = "register"),
-    
-   # path("lta/<str:username>/", views.normalview, name = "normalview"),
-    
-   path("description/", views.description, name = "description"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

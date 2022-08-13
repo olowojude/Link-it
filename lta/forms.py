@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Home, Description
+from .models import Home
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -15,9 +15,4 @@ class RegisterForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
 
         
-                        
-#####
-class DescriptionForm(ModelForm):
-    class Meta:
-        model = Description
-        fields = "__all__"       
+                       

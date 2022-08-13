@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from .models import Home, Description
+from .models import Home
 
-from .forms import AddLinkForm, RegisterForm, DescriptionForm
+from .forms import AddLinkForm, RegisterForm
 
 from django.contrib.auth.forms import UserCreationForm
 
@@ -26,10 +26,9 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url="loginpage")
 def home(request):
     links = Home.objects.all()
-    bio = Description.objects.all()
 
     
-    context = {"links": links, "bio": bio}
+    context = {"links": links}
     return render(request, "lta/home.html", context)
     
     
@@ -158,36 +157,3 @@ def logoutpage(request):
 
                 
     
-#### NORMAL VIEW THAT APPEARS TO NONE USERS
-
-#def normalview(request, username):
-#    links = Home.objects.all()
- #   username = RegisterForm.objects.get(username=username)
-    
-#    context = {"links": links}
-#    return render(request, "lta/normalview.html", context)  
-    
-    
-
-    
-        
-                
-##### FOR DESCRIPTION
-def description(request):
-    descriptionform = DescriptionForm()
-    
-    if request.method == "POST":
-        descriptionform = DescriptionForm(request.POST)
-        if descriptionform.is_valid():
-            descriptionform.save()
-            return redirect('home')
-    
-    #if request.method == "POST":
-        #description =  request.POST.get("description")
-        
-     #   if description.is_valid():
-     #       description.save()
-    #        return redirect('home')
-    
-    context = {"descriptionform": descriptionform}
-    return render(request, "lta/description.html", context)

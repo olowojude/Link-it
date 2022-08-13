@@ -5,9 +5,11 @@
 <div class="container">				
 	{% for link in links %}
 	<ul class="links">
-		<li class="link"><a href="{{link.url}}">{{link.name}}</a></li><br>
-		<a href="{% url 'updatelink' link.id %}">Edit Link</a> 
-		<a href="{% url 'deletelink' link.id %}">Delete Link</a>
+		<li class="link"><a href="{{link.url}}">{{link.name}}</a></li>
+		<div class="edit-delete-link-container">
+			<a class="edit" href="{% url 'updatelink' link.id %}">Edit Link</a> 
+			<a class="delete" href="{% url 'deletelink' link.id %}">Delete Link</a>
+		</div>
 	</ul>
 	{% empty %}
 	<ul>
@@ -15,8 +17,10 @@
 	</ul>										
 	{% endfor %}
 								
-	<a href="{% url 'addlink' %}">Add link</a>
-	<a href="">Preview </a> 
+	<div class="bottom-links">
+		<a href="{% url 'addlink' %}">Add link</a>
+		<a href="">Preview </a> 
+	</div>
 </div>
 
 {% endblock %}								
