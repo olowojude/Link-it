@@ -1,5 +1,5 @@
 {% extends 'lta/main.html' %} {% block content %}
-<div>
+<div class="container login">
   <form action="" method="POST">
     {% csrf_token %}
     <label>Username:</label>
@@ -17,7 +17,7 @@
       placeholder="Enter Password.."
       id="password"
     /><br />
-    <input type="submit" value="Login" />
+    <input type="submit" class="submit" value="Login" />
   </form>
   <div>
     {% for message in messages %}
@@ -28,7 +28,9 @@
   <div>
     <p>
       Don't have an account yet?
-      <a href="{% url 'register' %}"> Create account </a>
+      <a href="{% url 'register' %} " class="create-an-account">
+        Create account
+      </a>
     </p>
   </div>
 

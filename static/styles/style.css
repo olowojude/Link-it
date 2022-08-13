@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins";
+    background: #1f1917;
+    color: white;
 }
 li {
     list-style: none;
@@ -17,7 +19,6 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 1em;
-    background: red;
 }
 
 /*home page */
@@ -34,9 +35,86 @@ a {
     padding: 1em;
     border: 1px solid black;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 1em;
+    background: #0f0909;
 }
 .edit-delete-link-container {
     text-align: center;
+}
+.edit {
+    margin-right: 1em;
+}
+.edit, .delete {
+    border-bottom: 1px solid white; 
+}
+.add-a-link {
+    margin-right: 1em;
+}
+.add-a-link, .preview {
+    border-bottom: 1px solid white;
+}
+
+/* update link */
+.update p {
+    margin: 1em;;
+}
+.update input {
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: 5px;
+}
+.update .submit {
+    cursor: pointer;
+}
+/* add link */
+.addlink p {
+    margin: 1em;;
+}
+.addlink input {
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: 5px;
+}
+.addlink .submit {
+    cursor: pointer;
+}
+
+/* login page */ 
+.login p {
+    margin: 1em;;
+}
+.login input {
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: 5px;
+}
+.login .submit {
+    cursor: pointer;
+    margin-top: 1em;
+}
+.create-an-account, .login-to-acct {
+    border-bottom: 1px solid white;
+}
+
+/* register page */
+.register p {
+    margin: 1em;;
+}
+.register input {
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: 5px;
+}
+.register .submit {
+    cursor: pointer;
+    margin-top: 1em;
 }
