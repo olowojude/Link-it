@@ -1,7 +1,6 @@
 from django.forms import ModelForm
-from .models import Home
+from .models import Home, User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 
 class AddLinkForm(ModelForm):
     class Meta:       
