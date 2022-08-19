@@ -20,13 +20,32 @@ a {
     justify-content: space-between;
     padding: 1em;
 }
+.nav-links a {
+    margin: 0 1em;
+}
 
 /*home page */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5em;
+    margin: 4em 0;
+}
+.profile-section {
+    margin: 2em 1em;
+    text-align: center
+}
+.profile-section img {
+    display: block;
+    margin: 1em auto;
+    width: 14em;
+    height: 14em;
+    border-radius: 50%;
+}
+.bio {
+    max-width: 30em;
+    display: block;
+    margin: 1em auto;
 }
 .links {
     margin: 1em;
@@ -117,4 +136,25 @@ a {
 .register .submit {
     cursor: pointer;
     margin-top: 1em;
+}
+
+/* update user */
+.updateuser-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.updateuser-container h2 {
+    margin-bottom: 1em;
+}
+.updateuser-container input {
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: 5px;
+    margin: 1em auto;
+}
+.updateuser-container .submit {
+    cursor: pointer;
 }

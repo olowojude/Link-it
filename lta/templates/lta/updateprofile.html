@@ -1,0 +1,18 @@
+{% extends 'lta/main.html' %}
+{% load static %}
+{% block content %}
+<div class="updateuser-container">
+    <h2>Update Profile </h2>
+    <form method="POST" action="">
+		{% csrf_token %}
+		{% for field in form %}
+			<!-- div container holding form field-->
+			<div class="update-user_form">
+				<label>{{field.label}}</label>
+				{{field}}
+		{% endfor %}
+		<input type="submit" class="submit" value="Submit">								                 
+	</form>												                 
+</div>
+{% endblock %}		
+
