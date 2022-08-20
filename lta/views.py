@@ -27,6 +27,13 @@ def home(request):
     return render(request, "lta/home.html", context)
 
 
+def preview(request):
+    links = Home.objects.all()
+
+    context = {"links": links}
+    return render(request, "lta/preview.html", context)
+
+
 # TO ADD LINK PAGE
 @login_required(login_url="loginpage")
 def addlink(request):
@@ -111,7 +118,7 @@ def loginpage(request):
         return render(request, "lta/login.html", context)
 
 
-# update profile
+# Update User profile
 def updateProfile(request):
 
     user = request.user

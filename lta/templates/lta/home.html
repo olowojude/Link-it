@@ -1,34 +1,32 @@
-{% extends 'lta/main.html' %}
-{% load static %}
-{% block content %}
+{% extends 'lta/main.html' %} {% load static %} {% block content %}
 
-<div class="container">	
-	<div class="profile-section">
-		<img src="{{ request.user.profile_image.url }}" alt=""><br>
-		<span class="bio">{{ request.user.bio }}</span>
-	</div>
-	
-	{% for link in links %}
-	<ul class="links">
-		<li class="link"><a href="{{link.url}}">{{link.name}}</a></li>
-		<div class="edit-delete-link-container">
-			<a class="edit" href="{% url 'updatelink' link.id %}">Edit Link</a> 
-			<a class="delete" href="{% url 'deletelink' link.id %}">Delete Link</a>
-		</div>
-	</ul>
-	{% empty %}
-	<ul>
-		<li class="link">No links</li>	
-	</ul>										
-	{% endfor %}
-								
-	<div class="bottom-links">
-		<a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
-		<a href="" class="preview">Preview </a> 
-	</div>
+<div class="container">
+  <div class="profile-section">
+    {% if request.user.profile_image %}
+    <img src="{{ request.user.profile_image.url }}" alt="" /><br />
+    {% endif %} {% if request.user.bio %}
+    <span class="bio">{{ request.user.bio }}</span>
+    {% endif %}
+  </div>
+
+  {% for link in links %}
+  <ul class="links">
+    <li class="link"><a href="{{link.url}}">{{link.name}}</a></li>
+    <div class="edit-delete-link-container">
+      <a class="edit" href="{% url 'updatelink' link.id %}">Edit Link</a>
+      <a class="delete" href="{% url 'deletelink' link.id %}">Delete Link</a>
+    </div>
+  </ul>
+  {% empty %}
+  <ul>
+    <li class="link">You have no links, click the link below to add</li>
+  </ul>
+  {% endfor %}
+
+  <div class="bottom-links">
+    <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
+    <a href="{% url 'preview' %}" class="preview">Preview </a>
+  </div>
 </div>
 
-{% endblock %}								
-</body>
-</html>
-
+{% endblock %}

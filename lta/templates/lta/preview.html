@@ -1,0 +1,18 @@
+{% extends 'lta/preview-main.html' %} {% load static %} {% block content %}
+
+<div class="container">
+  <div class="profile-section">
+    <img src="{{ request.user.profile_image.url }}" alt="" /><br />
+    {% if request.user.bio %}
+    <span class="bio">{{ request.user.bio }}</span>
+    {% endif %}
+  </div>
+
+  {% for link in links %}
+  <ul class="links">
+    <li class="link"><a href="{{link.url}}">{{link.name}}</a></li>
+  </ul>
+  {% endfor %}
+</div>
+
+{% endblock %}

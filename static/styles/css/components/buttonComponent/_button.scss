@@ -1,0 +1,27 @@
+/* links components */
+.links {
+    margin: 1em;
+    width: 50%;
+}
+.link {
+    padding: 1em;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px;
+    margin: 1em;
+}
+.edit-delete-link-container {
+    text-align: center;
+}
+.edit {
+    margin-right: 1em;
+}
+.edit, .delete {
+    border-bottom: 1px solid white; 
+}
+.add-a-link {
+    margin-right: 1em;
+}
+.add-a-link, .preview {
+    border-bottom: 1px solid white;
+}

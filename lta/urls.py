@@ -20,6 +20,8 @@ urlpatterns = [
     path("register/", views.register, name="register"),
 
     path("update-profile/", views.updateProfile, name="updateprofile"),
+
+    path("preview/", views.preview, name="preview")
 ]
 
 urlpatterns += staticfiles_urlpatterns()

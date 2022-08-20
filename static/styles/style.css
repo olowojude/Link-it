@@ -1,165 +1,196 @@
+/* typography */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "poppins";
-    background: #1f1917;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+  background: #1f1917;
+  color: white;
 }
+
 li {
-    list-style: none;
+  list-style: none;
 }
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-/* navbar */
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1em;
-}
-.nav-links a {
-    margin: 0 1em;
-}
-
-/*home page */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 4em 0;
-}
-.profile-section {
-    margin: 2em 1em;
-    text-align: center
-}
-.profile-section img {
-    display: block;
-    margin: 1em auto;
-    width: 10em;
-    height: 10em;
-    border-radius: 50%;
-    background-position: center;
-    object-fit: contain;
-}
-#profile_image-clear_id {
-    display: none;
-}
-.bio {
-    max-width: 30em;
-    display: block;
-    margin: 1em auto;
-}
+/* links components */
 .links {
-    margin: 1em;
-    width: 50%;
+  margin: 1em;
+  width: 50%;
 }
+
 .link {
-    padding: 1em;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 5px;
-    margin: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+  margin: 1em;
 }
+
 .edit-delete-link-container {
-    text-align: center;
+  text-align: center;
 }
+
 .edit {
-    margin-right: 1em;
+  margin-right: 1em;
 }
+
 .edit, .delete {
-    border-bottom: 1px solid white; 
+  border-bottom: 1px solid white;
 }
+
 .add-a-link {
-    margin-right: 1em;
+  margin-right: 1em;
 }
+
 .add-a-link, .preview {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
-/* update link */
-.update p {
-    margin: 1em;;
-}
-.update input {
-    width: 100%;
-    border: 1px solid black;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: 5px;
-}
-.update .submit {
-    cursor: pointer;
-}
-/* add link */
+/* add link form */
 .addlink p {
-    margin: 1em;;
+  margin: 1em;
 }
+
 .addlink input {
-    width: 100%;
-    border: 1px solid black;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: 5px;
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
 }
+
 .addlink .submit {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-/* login page */ 
+/* login page form */
 .login p {
-    margin: 1em;;
+  margin: 1em;
 }
+
 .login input {
-    width: 100%;
-    border: 1px solid black;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: 5px;
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
 }
+
 .login .submit {
-    cursor: pointer;
-    margin-top: 1em;
+  cursor: pointer;
+  margin-top: 1em;
 }
+
 .create-an-account, .login-to-acct {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
-/* register page */
+/* register page form */
 .register p {
-    margin: 1em;;
-}
-.register input {
-    width: 100%;
-    border: 1px solid black;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: 5px;
-}
-.register .submit {
-    cursor: pointer;
-    margin-top: 1em;
+  margin: 1em;
 }
 
-/* update user */
+.register input {
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+.register .submit {
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+/* update link form*/
+.update p {
+  margin: 1em;
+}
+
+.update input {
+  width: 80%;
+  border: 1px solid black;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+.update .submit {
+  cursor: pointer;
+}
+
+/* update user form */
 .updateuser-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .updateuser-container h2 {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
+
 .updateuser-container input {
-    width: 100%;
-    border: 1px solid black;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: 5px;
-    margin: 1em auto;
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin: 1em auto;
 }
+
 .updateuser-container .submit {
-    cursor: pointer;
+  cursor: pointer;
 }
+
+/* profile section component */
+.profile-section {
+  margin: 2em 1em;
+  text-align: center;
+}
+
+.profile-section img {
+  display: block;
+  margin: 1em auto;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  background-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#profile_image-clear_id {
+  display: none;
+}
+
+.bio {
+  max-width: 30em;
+  display: block;
+  margin: 1em auto;
+}
+
+/* home page layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4em 0;
+}
+
+/* navbar component */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.nav-links a {
+  margin: 0 1em;
+}/*# sourceMappingURL=style.css.map */

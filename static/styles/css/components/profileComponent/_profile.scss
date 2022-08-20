@@ -1,0 +1,23 @@
+
+/* profile section component */
+.profile-section {
+    margin: 2em 1em;
+    text-align: center
+}
+.profile-section img {
+    display: block;
+    margin: 1em auto;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: contain;
+}
+#profile_image-clear_id {
+    display: none;
+}
+.bio {
+    max-width: 30em;
+    display: block;
+    margin: 1em auto;
+}

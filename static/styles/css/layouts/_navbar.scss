@@ -1,0 +1,10 @@
+/* navbar component */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+}
+.nav-links a {
+    margin: 0 1em;
+}
