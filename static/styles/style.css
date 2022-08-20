@@ -38,9 +38,14 @@ a {
 .profile-section img {
     display: block;
     margin: 1em auto;
-    width: 14em;
-    height: 14em;
+    width: 10em;
+    height: 10em;
     border-radius: 50%;
+    background-position: center;
+    object-fit: contain;
+}
+#profile_image-clear_id {
+    display: none;
 }
 .bio {
     max-width: 30em;

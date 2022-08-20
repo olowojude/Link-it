@@ -1,3 +1,4 @@
+from msilib.schema import File
 from django.shortcuts import render, redirect
 
 from .models import Home, User
@@ -22,9 +23,7 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     links = Home.objects.all()
 
-    user = User.objects.all()
-
-    context = {"links": links, "user": user}
+    context = {"links": links}
     return render(request, "lta/home.html", context)
 
 
@@ -119,7 +118,7 @@ def updateProfile(request):
     form = UserForm(instance=user)
 
     if request.method == "POST":
-        form = UserForm(request.POST, instance=user)
+        form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid:
             form.save()
             return redirect("home")

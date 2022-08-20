@@ -19,4 +19,4 @@ class RegisterForm(UserCreationForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ["image", "bio", "username", "email", ]
+        fields = ["profile_image", "bio", "username", "email", ]

@@ -3,7 +3,7 @@
 {% block content %}
 <div class="updateuser-container">
     <h2>Update Profile </h2>
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
 		{% csrf_token %}
 		{% for field in form %}
 			<!-- div container holding form field-->
