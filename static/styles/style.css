@@ -166,7 +166,7 @@ a {
 }
 
 #profile_image-clear_id {
-  display: none;
+  width: auto;
 }
 
 .bio {
@@ -189,6 +189,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   padding: 1em;
+  align-items: center;
 }
 
 .nav-links a {
