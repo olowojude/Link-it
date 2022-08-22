@@ -25,7 +25,9 @@
 
   <div class="bottom-links">
     <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
-    <a href="{% url 'preview' %}" class="preview">Preview </a>
+    <a href="{% url 'preview' request.user.username %}" class="preview"
+      >Preview
+    </a>
   </div>
 </div>
 

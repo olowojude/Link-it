@@ -1,5 +1,5 @@
 from re import template
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth import views as auth_views
@@ -22,7 +22,8 @@ urlpatterns = [
 
     path("update-profile/", views.updateProfile, name="updateprofile"),
 
-    path("preview/", views.preview, name="preview"),
+    path("<username>/", views.preview, name="preview"),
+    # Regex equivalent: re_path(r'^(?P<username>\w+)/$'
 
     path('reset-password/', auth_views.PasswordResetView.as_view(template_name="lta/password-reset.html"),
          name="reset_password"),

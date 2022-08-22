@@ -23,11 +23,14 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     links = Home.objects.all()
 
-    context = {"links": links}
+    context = {"links": links, }
     return render(request, "lta/home.html", context)
 
+# preview
 
-def preview(request):
+
+def preview(request, username):
+    user = User.objects.get(username=username)
     links = Home.objects.all()
 
     context = {"links": links}
