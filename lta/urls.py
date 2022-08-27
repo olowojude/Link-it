@@ -1,3 +1,4 @@
+from cgitb import handler
 from re import template
 from django.urls import path, re_path
 from . import views
@@ -20,9 +21,11 @@ urlpatterns = [
 
     path("register/", views.register, name="register"),
 
+    path("error/", views.notFound, name="notfound"),
+
     path("update-profile/", views.updateProfile, name="updateprofile"),
 
-    path("<username>/", views.preview, name="preview"),
+    re_path(r'^(?P<username>\w+)/$', views.preview, name="preview"),
     # Regex equivalent: re_path(r'^(?P<username>\w+)/$'
 
     path('reset-password/', auth_views.PasswordResetView.as_view(template_name="lta/password-reset.html"),
@@ -38,4 +41,5 @@ urlpatterns = [
          name="password_reset_complete")
 ]
 
+# handler404 = "lta.views.notFound"
 urlpatterns += staticfiles_urlpatterns()

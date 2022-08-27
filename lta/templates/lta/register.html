@@ -1,4 +1,4 @@
-{% extends 'lta/main.html' %} {% block content %}
+{% extends 'lta/preview-main.html' %} {% block content %}
 <div class="container register">
   <form action="" method="POST">
     {% csrf_token %} {{ registerform.username.label }} {{registerform.username}}

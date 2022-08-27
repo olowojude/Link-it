@@ -4,7 +4,9 @@
   <div class="profile-section">
     {% if request.user.profile_image %}
     <img src="{{ request.user.profile_image.url }}" alt="" /><br />
-    {% endif %} {% if request.user.bio %}
+    {% endif %} 
+    <span class="username">@{{request.user.username}}</span>
+    {% if request.user.bio %}
     <span class="bio">{{ request.user.bio }}</span>
     {% endif %}
   </div>
@@ -22,12 +24,9 @@
     <li class="link">You have no links, click the link below to add</li>
   </ul>
   {% endfor %}
-
-  <div class="bottom-links">
+  <div class="bottom-btns">
     <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
-    <a href="{% url 'preview' request.user.username %}" class="preview"
-      >Preview
-    </a>
+    <a href="{% url 'preview' request.user.username %}" class="preview">Preview</a>
   </div>
 </div>
 

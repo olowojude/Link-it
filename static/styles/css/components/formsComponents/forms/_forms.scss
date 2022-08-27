@@ -1,0 +1,81 @@
+@use "../../../abstracts/mixins" as *;
+
+/* add link form */
+.addlink p {
+    margin: 1em;
+}
+
+.addlink input {
+    @include form-input();
+}
+
+.addlink .submit {
+    cursor: pointer;
+}
+
+/* login page form */
+.login p {
+    margin: 1em;
+}
+
+.login input {
+    @include form-input();
+}
+
+.login .submit {
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.create-an-account,
+.login-to-acct {
+    border-bottom: 1px solid white;
+}
+
+/* register page form */
+.register p {
+    margin: 1em;
+    ;
+}
+
+.register input {
+    @include form-input();
+}
+
+.register .submit {
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+/* update link form*/
+.update p {
+    margin: 1em;
+}
+
+.update input {
+    @include form-input();
+}
+
+.update .submit {
+    cursor: pointer;
+}
+
+/* update user form */
+.updateuser-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updateuser-container h2 {
+    margin-bottom: 1em;
+}
+
+.updateuser-container input {
+    @include form-input();
+    margin-bottom: 2em;
+}
+
+.updateuser-container .submit {
+    cursor: pointer;
+}

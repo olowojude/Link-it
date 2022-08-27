@@ -1,0 +1,7 @@
+@mixin form-input {
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: 5px;
+}

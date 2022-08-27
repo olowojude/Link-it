@@ -3,25 +3,40 @@
     margin: 1em;
     width: 50%;
 }
+
 .link {
-    padding: 1em;
+    padding: 1.5em 1em;
     border: 1px solid black;
     text-align: center;
-    border-radius: 5px;
-    margin: 1em;
+    border-radius: 20px;
 }
+
 .edit-delete-link-container {
     text-align: center;
+    margin-top: 0.5em;
 }
+
 .edit {
     margin-right: 1em;
 }
-.edit, .delete {
-    border-bottom: 1px solid white; 
-}
-.add-a-link {
-    margin-right: 1em;
-}
-.add-a-link, .preview {
+
+.edit,
+.delete {
     border-bottom: 1px solid white;
+}
+
+.bottom-btns {
+    margin-top: 5em;
+    position: sticky;
+}
+
+.bottom-btns a {
+    display: block;
+    text-align: center;
+    margin: 1em auto;
+    background: white;
+    padding: 1em;
+    border-radius: 20px;
+    width: 200px;
+    color: black;
 }

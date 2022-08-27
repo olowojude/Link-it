@@ -1,4 +1,5 @@
 from msilib.schema import File
+
 from django.shortcuts import render, redirect
 
 from .models import Home, User
@@ -30,7 +31,8 @@ def home(request):
 
 
 def preview(request, username):
-    user = User.objects.get(username=username)
+    username = User.objects.get(username=username)
+    # username = request.user.username
     links = Home.objects.all()
 
     context = {"links": links}
@@ -122,6 +124,7 @@ def loginpage(request):
 
 
 # Update User profile
+@login_required(login_url="loginpage")
 def updateProfile(request):
 
     user = request.user
@@ -142,3 +145,7 @@ def updateProfile(request):
 def logoutpage(request):
     logout(request)
     return redirect('loginpage')
+
+
+def notFound(request):
+    return render(request, "lta/not-found.html")
