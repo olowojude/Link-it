@@ -31,7 +31,10 @@ def home(request):
 
 
 def preview(request, username):
+
     username = User.objects.get(username=username)
+    print(username)
+
     # username = request.user.username
     links = Home.objects.all()
 

@@ -141,7 +141,7 @@ AUTH_USER_MODEL = "lta.User"
 # SMTP    SETUP
 EMAIL_HOST = config("EMAIL_HOST")
 EMAIL_HOST_USER = config("EMAIL")
-EMAIL_HOST_PASSWORD = config('p')
+EMAIL_HOST_PASSWORD = config("PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

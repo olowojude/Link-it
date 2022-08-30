@@ -4,7 +4,7 @@
   <div class="profile-section">
     {% if request.user.profile_image %}
     <img src="{{ request.user.profile_image.url }}" alt="" /><br />
-    {% endif %} 
+    {% endif %}
     <span class="username">@{{request.user.username}}</span>
     {% if request.user.bio %}
     <span class="bio">{{ request.user.bio }}</span>
@@ -13,7 +13,9 @@
 
   {% for link in links %}
   <ul class="links">
-    <li class="link"><a href="{{link.url}}">{{link.name}}</a></li>
+    <li class="link">
+      <a class="link-name" href="{{link.url}}">{{link.name}}</a>
+    </li>
     <div class="edit-delete-link-container">
       <a class="edit" href="{% url 'updatelink' link.id %}">Edit Link</a>
       <a class="delete" href="{% url 'deletelink' link.id %}">Delete Link</a>
@@ -26,7 +28,9 @@
   {% endfor %}
   <div class="bottom-btns">
     <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
-    <a href="{% url 'preview' request.user.username %}" class="preview">Preview</a>
+    <a href="{% url 'preview' request.user.username %}" class="preview"
+      >Preview</a
+    >
   </div>
 </div>
 

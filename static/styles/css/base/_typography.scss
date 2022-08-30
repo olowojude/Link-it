@@ -3,11 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: "poppins"; */
-    background: #1f1917;
+    font-family: "poppins";
     color: white;
 }
-
+body {
+    background: #1d1d1b;
+}
 li {
     list-style: none;
 }
@@ -15,7 +16,6 @@ li {
 a {
     text-decoration: none;
 }
-
 .not-found-text a {
     text-align: center;
     font-size: 2em;

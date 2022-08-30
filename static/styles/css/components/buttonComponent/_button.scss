@@ -1,14 +1,18 @@
 /* links components */
 .links {
     margin: 1em;
-    width: 50%;
 }
 
 .link {
     padding: 1.5em 1em;
-    border: 1px solid black;
     text-align: center;
     border-radius: 20px;
+    width: 30em;
+    transition: .5s;
+    background: #131212;
+}
+.link:hover {
+    width: 35em;
 }
 
 .edit-delete-link-container {
@@ -19,12 +23,9 @@
 .edit {
     margin-right: 1em;
 }
-
-.edit,
 .delete {
-    border-bottom: 1px solid white;
+    color: rgb(194, 43, 43);
 }
-
 .bottom-btns {
     margin-top: 5em;
     position: sticky;
@@ -34,9 +35,19 @@
     display: block;
     text-align: center;
     margin: 1em auto;
-    background: white;
     padding: 1em;
     border-radius: 20px;
     width: 200px;
     color: black;
+}
+
+.add-a-link {
+    background: #13cf33;
+}
+.preview {
+    background: white;
+}
+.submit {
+    background: #131212;
+    border: none;
 }

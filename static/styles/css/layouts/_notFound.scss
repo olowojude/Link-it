@@ -1,11 +1,21 @@
-.not-found-img {
-    width: 100%;
-    height: 90vh;
-    object-fit: cover;
+.not-found-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
-.not-found-text {
-    text-align: center;
-    font-size: 1.5em;
-    margin: 1em auto;
-    display: block;
+.not-found-container img {
+    width: 70%;
+}
+.not-found-container p {
+	align-self: center;
+	margin: 0 2em;
+    width: 30%;
+    font-size: 2em;
+    font-style: italic;
+}
+.not-found-container p a {
+	background: linear-gradient(0deg, white, white);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: bottom;
 }

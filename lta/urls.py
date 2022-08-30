@@ -25,8 +25,8 @@ urlpatterns = [
 
     path("update-profile/", views.updateProfile, name="updateprofile"),
 
+    #     path("<username>/", views.preview, name="preview"),
     re_path(r'^(?P<username>\w+)/$', views.preview, name="preview"),
-    # Regex equivalent: re_path(r'^(?P<username>\w+)/$'
 
     path('reset-password/', auth_views.PasswordResetView.as_view(template_name="lta/password-reset.html"),
          name="reset_password"),

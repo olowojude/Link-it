@@ -4,8 +4,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins";
-  background: #1f1917;
   color: white;
+}
+
+body {
+  background: #1d1d1b;
 }
 
 li {
@@ -24,14 +27,19 @@ a {
 /* links components */
 .links {
   margin: 1em;
-  width: 50%;
 }
 
 .link {
   padding: 1.5em 1em;
-  border: 1px solid black;
   text-align: center;
   border-radius: 20px;
+  width: 30em;
+  transition: 0.5s;
+  background: #131212;
+}
+
+.link:hover {
+  width: 35em;
 }
 
 .edit-delete-link-container {
@@ -43,9 +51,8 @@ a {
   margin-right: 1em;
 }
 
-.edit,
 .delete {
-  border-bottom: 1px solid white;
+  color: rgb(194, 43, 43);
 }
 
 .bottom-btns {
@@ -58,11 +65,23 @@ a {
   display: block;
   text-align: center;
   margin: 1em auto;
-  background: white;
   padding: 1em;
   border-radius: 20px;
   width: 200px;
   color: black;
+}
+
+.add-a-link {
+  background: #13cf33;
+}
+
+.preview {
+  background: white;
+}
+
+.submit {
+  background: #131212;
+  border: none;
 }
 
 /* profile section component */
@@ -78,8 +97,6 @@ a {
   height: 8em;
   border-radius: 50%;
   background-position: center;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 #profile_image-clear_id {
@@ -111,20 +128,32 @@ a {
 
 .nav-links a {
   margin: 0 1em;
+  font-family: "syncopate", sans-serif;
 }
 
-.not-found-img {
-  width: 100%;
-  height: 90vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+.not-found-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.not-found-text {
-  text-align: center;
-  font-size: 1.5em;
-  margin: 1em auto;
-  display: block;
+.not-found-container img {
+  width: 70%;
+}
+
+.not-found-container p {
+  align-self: center;
+  margin: 0 2em;
+  width: 30%;
+  font-size: 2em;
+  font-style: italic;
+}
+
+.not-found-container p a {
+  background: linear-gradient(0deg, white, white);
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: bottom;
 }
 
 /* add link form */
@@ -134,14 +163,13 @@ a {
 
 .addlink input {
   width: 100%;
-  border: 1px solid black;
+  background: #131212;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 1em 0.7em;
   border-radius: 5px;
-}
-
-.addlink .submit {
-  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-bottom: 1em;
 }
 
 /* login page form */
@@ -151,15 +179,13 @@ a {
 
 .login input {
   width: 100%;
-  border: 1px solid black;
+  background: #131212;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 1em 0.7em;
   border-radius: 5px;
-}
-
-.login .submit {
-  cursor: pointer;
-  margin-top: 1em;
+  outline: none;
+  border: none;
+  margin-bottom: 1em;
 }
 
 .create-an-account,
@@ -174,15 +200,13 @@ a {
 
 .register input {
   width: 100%;
-  border: 1px solid black;
+  background: #131212;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 1em 0.7em;
   border-radius: 5px;
-}
-
-.register .submit {
-  cursor: pointer;
-  margin-top: 1em;
+  outline: none;
+  border: none;
+  margin-bottom: 1em;
 }
 
 /* update link form*/
@@ -192,14 +216,13 @@ a {
 
 .update input {
   width: 100%;
-  border: 1px solid black;
+  background: #131212;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 1em 0.7em;
   border-radius: 5px;
-}
-
-.update .submit {
-  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-bottom: 1em;
 }
 
 /* update user form */
@@ -207,6 +230,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4em;
 }
 
 .updateuser-container h2 {
@@ -215,13 +239,36 @@ a {
 
 .updateuser-container input {
   width: 100%;
-  border: 1px solid black;
+  background: #131212;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 1em 0.7em;
   border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-bottom: 1em;
   margin-bottom: 2em;
 }
 
-.updateuser-container .submit {
+#id_bio {
+  background: #131212;
+  padding: 0.7em;
+  border: none;
+  outline: none;
+  width: 30em;
+}
+
+.submit {
   cursor: pointer;
+  margin-top: 1em;
+}
+
+form input {
+  width: 100%;
+  background: #131212;
+  outline: none;
+  padding: 1em 0.7em;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-bottom: 1em;
 }/*# sourceMappingURL=style.css.map */
