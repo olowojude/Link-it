@@ -24,6 +24,18 @@ a {
   font-size: 2em;
 }
 
+.go-back {
+  text-align: center;
+  width: 100%;
+  display: block;
+  text-decoration: underline;
+}
+
+.para {
+  margin: 1em;
+  text-align: center;
+}
+
 /* links components */
 .links {
   margin: 1em;
@@ -51,7 +63,7 @@ a {
   margin-right: 1em;
 }
 
-.delete {
+.delete, .fa-trash-o {
   color: rgb(194, 43, 43);
 }
 
@@ -60,15 +72,14 @@ a {
   position: -webkit-sticky;
   position: sticky;
 }
-
 .bottom-btns a {
   display: block;
   text-align: center;
   margin: 1em auto;
   padding: 1em;
   border-radius: 20px;
-  width: 200px;
   color: black;
+  width: 15em;
 }
 
 .add-a-link {
@@ -84,12 +95,36 @@ a {
   border: none;
 }
 
+@media (max-width: 500px) {
+  .link {
+    padding: 1em 0.7em;
+    width: 18em;
+    border-radius: 15px;
+    transition: 0.7s;
+  }
+  .link:hover {
+    width: 22em;
+  }
+  .bottom-btns {
+    margin-top: 3em;
+  }
+  .bottom-btns a {
+    width: 10em;
+  }
+}
+@media (max-width: 840px) {
+  .link {
+    width: 16em;
+  }
+  .link:hover {
+    width: 18em;
+  }
+}
 /* profile section component */
 .profile-section {
   margin: 2em 1em;
   text-align: center;
 }
-
 .profile-section img {
   display: block;
   margin: 1em auto;
@@ -98,17 +133,25 @@ a {
   border-radius: 50%;
   background-position: center;
 }
-
-#profile_image-clear_id {
-  width: auto;
-}
-
-.bio {
+.profile-section .bio {
   max-width: 30em;
   display: block;
   margin: 1em auto;
 }
 
+#profile_image-clear_id {
+  width: auto;
+}
+
+@media (max-width: 500px) {
+  .profile-section img {
+    width: 7em;
+    height: 7em;
+  }
+  .profile-section .bio {
+    max-width: 18em;
+  }
+}
 /* home page layout */
 .container {
   display: flex;
@@ -122,15 +165,24 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1em;
+  padding: 2em;
   align-items: center;
 }
 
 .nav-links a {
   margin: 0 1em;
-  font-family: "syncopate", sans-serif;
 }
 
+@media (max-width: 500px) {
+  .navbar {
+    padding: 1.5em;
+  }
+}
+@media (max-width: 840px) {
+  .nav-links a {
+    margin: 0 0.5em;
+  }
+}
 .not-found-container {
   display: flex;
   flex-direction: row;
@@ -156,13 +208,14 @@ a {
   background-position: bottom;
 }
 
-/* add link form */
-.addlink p {
-  margin: 1em;
+.submit {
+  cursor: pointer;
+  margin-top: 1em;
+  text-align: center;
 }
 
-.addlink input {
-  width: 100%;
+form input {
+  width: 30em;
   background: #131212;
   outline: none;
   padding: 1em 0.7em;
@@ -170,22 +223,15 @@ a {
   outline: none;
   border: none;
   margin-bottom: 1em;
+  display: block;
 }
 
-/* login page form */
-.login p {
+form p {
   margin: 1em;
 }
 
-.login input {
-  width: 100%;
-  background: #131212;
-  outline: none;
-  padding: 1em 0.7em;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  margin-bottom: 1em;
+.login-page-bottom-texts {
+  text-align: center;
 }
 
 .create-an-account,
@@ -198,39 +244,12 @@ a {
   margin: 1em;
 }
 
-.register input {
-  width: 100%;
-  background: #131212;
-  outline: none;
-  padding: 1em 0.7em;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  margin-bottom: 1em;
-}
-
-/* update link form*/
-.update p {
-  margin: 1em;
-}
-
-.update input {
-  width: 100%;
-  background: #131212;
-  outline: none;
-  padding: 1em 0.7em;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  margin-bottom: 1em;
-}
-
-/* update user form */
+/* update profile form */
 .updateuser-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4em;
+  margin: 4em auto;
 }
 
 .updateuser-container h2 {
@@ -238,14 +257,6 @@ a {
 }
 
 .updateuser-container input {
-  width: 100%;
-  background: #131212;
-  outline: none;
-  padding: 1em 0.7em;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  margin-bottom: 1em;
   margin-bottom: 2em;
 }
 
@@ -257,18 +268,23 @@ a {
   width: 30em;
 }
 
-.submit {
-  cursor: pointer;
-  margin-top: 1em;
-}
-
-form input {
-  width: 100%;
-  background: #131212;
-  outline: none;
-  padding: 1em 0.7em;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  margin-bottom: 1em;
+@media (max-width: 500px) {
+  form input {
+    width: 19em;
+    background: #131212;
+    outline: none;
+    padding: 1em 0.7em;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 1em;
+    display: block;
+    margin: 0 auto;
+  }
+  form input p {
+    margin: 0.7em;
+  }
+  #id_bio {
+    width: 20em;
+  }
 }/*# sourceMappingURL=style.css.map */

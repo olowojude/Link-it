@@ -1,3 +1,6 @@
+@use "../../abstracts/mixins" as *;
+
+
 /* links components */
 .links {
     margin: 1em;
@@ -23,22 +26,24 @@
 .edit {
     margin-right: 1em;
 }
-.delete {
+.delete, .fa-trash-o {
     color: rgb(194, 43, 43);
 }
+
+// preview and add link container
 .bottom-btns {
     margin-top: 5em;
     position: sticky;
-}
 
-.bottom-btns a {
-    display: block;
-    text-align: center;
-    margin: 1em auto;
-    padding: 1em;
-    border-radius: 20px;
-    width: 200px;
-    color: black;
+    a {
+        display: block;
+        text-align: center;
+        margin: 1em auto;
+        padding: 1em;
+        border-radius: 20px;
+        color: black;
+        width: 15em;
+    }
 }
 
 .add-a-link {
@@ -50,4 +55,32 @@
 .submit {
     background: #131212;
     border: none;
+}
+
+// tab media queries
+@include big-phone {
+    .link {
+        padding: 1em .7em;
+        width: 18em;
+        border-radius: 15px;
+        transition: .7s;
+    }
+    .link:hover {
+        width: 22em;
+    }
+    .bottom-btns {
+        margin-top: 3em;
+
+        a {
+            width: 10em;
+        }
+    }
+}
+@include small-phone {
+    .link {
+        width: 16em;
+    }
+    .link:hover {
+        width: 18em;
+    }
 }

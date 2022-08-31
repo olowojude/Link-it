@@ -1,5 +1,7 @@
+@use "./variables" as *;
+
 @mixin form-input {
-    width: 100%;
+    width: 30em;
     background: #131212;;
     outline: none;
     padding: 1em .7em;
@@ -7,4 +9,29 @@
     outline: none;
     border: none;
     margin-bottom: 1em;
+    display: block;
+}
+
+@mixin phone-form-input {
+    width: 19em;
+    background: #131212;;
+    outline: none;
+    padding: 1em .7em;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 1em;
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin big-phone {
+    @media (max-width: #{$big-phone}) {
+        @content;
+    }
+}
+@mixin small-phone {
+    @media (max-width: #{$tab}) {
+        @content;
+    }
 }

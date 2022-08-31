@@ -1,13 +1,26 @@
+@use "../abstracts/mixins" as *;
+
 /* navbar component */
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1em;
+    padding: 2em;
     align-items: center;
 }
 
 .nav-links a {
     margin: 0 1em;
-    font-family: 'syncopate', sans-serif;
+}
+
+// media queries
+@include big-phone {
+    .navbar {
+        padding: 1.5em;
+    }
+}
+@include small-phone {
+    .nav-links a {
+        margin: 0 .5em;
+    }
 }
