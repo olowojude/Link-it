@@ -31,9 +31,9 @@ a {
   text-decoration: underline;
 }
 
-.para {
+.password-reset-sent-test, .forgetten-password-text {
   margin: 1em;
-  text-align: center;
+  text-align: justify;
 }
 
 /* links components */
@@ -112,7 +112,7 @@ a {
     width: 10em;
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 350px) {
   .link {
     width: 16em;
   }
@@ -178,7 +178,7 @@ a {
     padding: 1.5em;
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 350px) {
   .nav-links a {
     margin: 0 0.5em;
   }
@@ -265,7 +265,7 @@ form p {
   padding: 0.7em;
   border: none;
   outline: none;
-  width: 30em;
+  width: 28em;
 }
 
 @media (max-width: 500px) {
@@ -285,6 +285,20 @@ form p {
     margin: 0.7em;
   }
   #id_bio {
-    width: 20em;
+    width: 19em;
+  }
+}
+@media (max-width: 350px) {
+  form input {
+    width: 17em;
+    background: #131212;
+    outline: none;
+    padding: 1em 0.7em;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 1em;
+    display: block;
+    margin: 0 auto;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,16 +1,13 @@
-1. Check why it raises this error "lta.models.User.DoesNotExist: User matching query does not exist." when i refresh the edit page
+Tests
 
-2. check why it raises this error "NoReverseMatch at /login/
-Reverse for 'preview' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<username>[^/]+)/\\Z']" when i try to logout
+1. Test to check that the link that is being created tallies
 
-3. How to store multiple css code inside a variable so that i can reuse those codes for the the forms part by doing
-.addlink input {
-    @includes input variable 
-}
-Where input variables = {
-    width: 100%;
-    border: 1px solid black;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: 5px;
-}
+2. Test that the username that is been returned tallies
+
+3. Test that the user wants to update a link, the specific link is what is gotten and updated
+
+4. Test that the user wants to delete a link, the specific link is what is gotten and deleted
+
+5. Test that its the specific user details that is being updated
+
+6. Login and Register

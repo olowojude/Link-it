@@ -2,7 +2,7 @@ from msilib.schema import File
 
 from django.shortcuts import render, redirect
 
-from .models import Home, User
+from .models import Link, User
 
 from .forms import AddLinkForm, RegisterForm, UserForm
 
@@ -22,7 +22,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="loginpage")
 def home(request):
-    links = Home.objects.all()
+    print(request.user.username)
+    links = Link.objects.all()
 
     context = {"links": links, }
     return render(request, "lta/home.html", context)
@@ -33,10 +34,8 @@ def home(request):
 def preview(request, username):
 
     username = User.objects.get(username=username)
-    print(username)
 
-    # username = request.user.username
-    links = Home.objects.all()
+    links = Link.objects.all()
 
     context = {"links": links}
     return render(request, "lta/preview.html", context)
@@ -60,7 +59,7 @@ def addlink(request):
 
 @login_required(login_url="loginpage")
 def updatelink(request, pk):
-    updatelink = Home.objects.get(id=pk)
+    updatelink = Link.objects.get(id=pk)
     updatelinkform = AddLinkForm(instance=updatelink)
 
     if request.method == "POST":
@@ -77,7 +76,7 @@ def updatelink(request, pk):
 
 @login_required(login_url="loginpage")
 def deletelink(request, pk):
-    deletelink = Home.objects.get(id=pk)
+    deletelink = Link.objects.get(id=pk)
     if request.method == 'POST':
         deletelink.delete()
         return redirect("home")

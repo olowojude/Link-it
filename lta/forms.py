@@ -1,11 +1,11 @@
 from django.forms import ModelForm
-from .models import Home, User
+from .models import Link, User
 from django.contrib.auth.forms import UserCreationForm
 
 
 class AddLinkForm(ModelForm):
     class Meta:
-        model = Home
+        model = Link
         fields = '__all__'
 
 

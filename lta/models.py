@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
-class Home(models.Model):
+class Link(models.Model):
     name = models.CharField(max_length=15)
     url = models.CharField(max_length=50)
 
@@ -13,7 +13,7 @@ class Home(models.Model):
 
 
 class User(AbstractUser):
-    name = models.CharField(max_length=200, null=True)
+    username = models.CharField(max_length=200, null=True, unique=True)
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True, blank=True)
     profile_image = models.ImageField(
