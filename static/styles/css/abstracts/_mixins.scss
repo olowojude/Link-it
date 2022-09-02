@@ -25,26 +25,13 @@
     margin: 0 auto;
 }
 
-@mixin small-phone-form-input {
-    width: 17em;
-    background: #131212;;
-    outline: none;
-    padding: 1em .7em;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    margin-bottom: 1em;
-    display: block;
-    margin: 0 auto;
-}
-
 @mixin big-phone {
     @media (max-width: #{$big-phone}) {
         @content;
     }
 }
 @mixin small-phone {
-    @media (max-width: #{$small-phone}) {
+    @media (max-width: #{$tab}) {
         @content;
     }
 }

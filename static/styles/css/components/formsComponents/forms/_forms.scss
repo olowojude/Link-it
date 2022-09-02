@@ -53,7 +53,7 @@ form p {
     padding: .7em;
     border: none;
     outline: none;
-    width: 28em;
+    width: 30em;
 }
 
 
@@ -66,12 +66,6 @@ form p {
         }
     }
     #id_bio {
-        width: 19em;
-    }
-}
-
-@include small-phone {
-    form input {
-    @include small-phone-form-input();
+        width: 20em;
     }
 }
