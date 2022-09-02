@@ -132,6 +132,8 @@ a {
   height: 8em;
   border-radius: 50%;
   background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .profile-section .bio {
   max-width: 30em;

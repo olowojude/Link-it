@@ -1,9 +1,10 @@
 from multiprocessing.connection import Client
 from unicodedata import name
 from urllib import request, response
-from django.test import TestCase
+from django.test import TestCase, Client
 from lta.models import Link, User
 from lta.views import *
+from django.urls import reverse
 
 
 class ModelTest(TestCase):
@@ -23,10 +24,10 @@ class ModelTest(TestCase):
         self.assertEqual(links.count(), 1)
 
         c = Client()
-        response = c.get("/home/")
-        self.assertEqual(response.status_code, 200)
+        response = c.get(reverse("home"))
+        self.assertEqual(response.status_code, 302)
 
-    def test_home_name(self):
+    def test_home_page_link_name(self):
         link1 = Link.objects.get(id=1)
         self.assertTrue(link1.name, "Twitter")
 
@@ -40,8 +41,21 @@ class ModelTest(TestCase):
         user = User.objects.get(username="user1")
         self.assertEqual(user.username, "user1")
 
-        # username = User.objects.get(name="user1")
-        # self.assertEqual(username.name, "user1")
+        # c = Client()
+        # response = c.get(reverse("preview"))
+        # self.assertEqual(response.status_code, 200)
 
-        # u = User.objects.get(name="user1")
-        # self.assertTrue(u.name, "user1")
+        # testing the addlink page
+    def test_register_page(self):
+        c = Client()
+        response = c.get(reverse("register"))
+        self.assertEqual(response.status_code, 200)
+
+   # testing the update link page
+
+    def test_update_link_page(self):
+        link1 = Link.objects.get("id=1")
+
+        c = Client()
+        response = c.get(f"/update-link/{link1.id}")
+        self.assertEqual(response.status_code, 200)

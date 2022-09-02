@@ -13,7 +13,7 @@ class Link(models.Model):
 
 
 class User(AbstractUser):
-    username = models.CharField(max_length=200, null=True, unique=True)
+    name = models.CharField(max_length=200, null=True)
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True, blank=True)
     profile_image = models.ImageField(

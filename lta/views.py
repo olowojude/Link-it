@@ -22,7 +22,6 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="loginpage")
 def home(request):
-    print(request.user.username)
     links = Link.objects.all()
 
     context = {"links": links, }
