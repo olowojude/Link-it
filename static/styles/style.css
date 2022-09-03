@@ -31,9 +31,10 @@ a {
   text-decoration: underline;
 }
 
-.para {
+.password-reset-p-tag, .password-reset-p-tag {
   margin: 1em;
-  text-align: center;
+  display: block;
+  text-align: justify;
 }
 
 /* links components */
@@ -265,10 +266,17 @@ form p {
   padding: 0.7em;
   border: none;
   outline: none;
-  width: 30em;
+  width: 28em;
+}
+
+#profile_image-clear_id {
+  display: inline;
 }
 
 @media (max-width: 500px) {
+  form {
+    margin: 1em;
+  }
   form input {
     width: 19em;
     background: #131212;
