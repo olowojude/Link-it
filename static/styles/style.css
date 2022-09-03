@@ -215,6 +215,10 @@ a {
   text-align: center;
 }
 
+.update-link-submit-btn {
+  margin-left: 1.2em;
+}
+
 form input {
   width: 30em;
   background: #131212;

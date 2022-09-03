@@ -1,8 +1,9 @@
 from msilib.schema import File
+from re import L
 
 from django.shortcuts import render, redirect
 
-from .models import Home, User
+from .models import Link, User
 
 from .forms import AddLinkForm, RegisterForm, UserForm
 
@@ -20,23 +21,26 @@ from django.contrib.auth.decorators import login_required
 
 # HOME PAGE
 
-@login_required(login_url="loginpage")
 def home(request):
-    links = Home.objects.all()
+    return render(request, "lta/home.html")
+
+
+@login_required(login_url="loginpage")
+def admin(request):
+    links = Link.objects.all()
 
     context = {"links": links, }
-    return render(request, "lta/home.html", context)
+    return render(request, "lta/admin.html", context)
 
 # preview
 
 
 def preview(request, username):
-
     username = User.objects.get(username=username)
     print(username)
 
     # username = request.user.username
-    links = Home.objects.all()
+    links = Link.objects.all()
 
     context = {"links": links}
     return render(request, "lta/preview.html", context)
@@ -50,7 +54,7 @@ def addlink(request):
         addlinkform = AddLinkForm(request.POST)
         if addlinkform.is_valid():
             addlinkform.save()
-            return redirect('home')
+            return redirect('admin')
 
     context = {"addlinkform": addlinkform}
     return render(request, "lta/addlink.html", context)
@@ -60,14 +64,14 @@ def addlink(request):
 
 @login_required(login_url="loginpage")
 def updatelink(request, pk):
-    updatelink = Home.objects.get(id=pk)
+    updatelink = Link.objects.get(id=pk)
     updatelinkform = AddLinkForm(instance=updatelink)
 
     if request.method == "POST":
         updatelinkform = AddLinkForm(request.POST, instance=updatelink)
         if updatelinkform.is_valid():
             updatelinkform.save()
-            return redirect('home')
+            return redirect('admin')
 
     context = {"updatelinkform": updatelinkform}
     return render(request, "lta/updatelink.html", context)
@@ -77,10 +81,10 @@ def updatelink(request, pk):
 
 @login_required(login_url="loginpage")
 def deletelink(request, pk):
-    deletelink = Home.objects.get(id=pk)
+    deletelink = Link.objects.get(id=pk)
     if request.method == 'POST':
         deletelink.delete()
-        return redirect("home")
+        return redirect("admin")
 
     context = {"deletelink": deletelink}
     return render(request, "lta/deletelink.html", context)
@@ -90,7 +94,7 @@ def deletelink(request, pk):
 
 def register(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('admin')
     else:
         registerform = RegisterForm()
 
@@ -109,7 +113,7 @@ def register(request):
 
 def loginpage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('admin')
     else:
         if request.method == "POST":
             username = request.POST.get("username")
@@ -118,7 +122,7 @@ def loginpage(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('admin')
             else:
                 messages.info(request, "Username or Password is incorrect")
 
@@ -137,7 +141,7 @@ def updateProfile(request):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid:
             form.save()
-            return redirect("home")
+            return redirect("admin")
 
     context = {"form": form}
     return render(request, "lta/updateprofile.html", context)

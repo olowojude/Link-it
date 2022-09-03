@@ -2,9 +2,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}" />
 
 <div class="navbar">
-  <a href="{% url 'home' %}"><h2>L!nkiT</h2></a>
+  <a href="{% url 'admin' %}"><h2>L!nkiT</h2></a>
   <div class="nav-links">
+    {% if request.user.is_authenticated %}
     <a href="{% url 'updateprofile' %}">Edit Profile</a>
     <a href="{% url 'logoutpage' %}">Logout</a>
+    {% endif %}
   </div>
 </div>
