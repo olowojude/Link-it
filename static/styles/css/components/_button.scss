@@ -1,4 +1,4 @@
-@use "../../abstracts/mixins" as *;
+@use "../abstracts/mixins" as *;
 
 
 /* links components */
@@ -13,9 +13,10 @@
     width: 30em;
     transition: .5s;
     background: #131212;
-}
-.link:hover {
-    width: 35em;
+
+    &:hover {
+        width: 35em;
+    }
 }
 
 .edit-delete-link-container {
@@ -57,16 +58,45 @@
     border: none;
 }
 
-// tab media queries
-@include big-phone {
+// home page "get started btn"
+.get-started-btn {
+    background: #13cf33;
+    @include home-page-btn();
+}    
+// home page "login btn"
+.login-btn {
+    text-decoration: underline;
+}
+// media queries
+@include tab {
     .link {
+        width: 25em;
         padding: 1em .7em;
-        width: 18em;
         border-radius: 15px;
         transition: .7s;
+
+        &:hover {
+            width: 30em;
+        }
     }
-    .link:hover {
-        width: 22em;
+}
+@include big-phone {
+    // home page btn(get started)
+    .get-started-btn {
+        background: #13cf33;
+        @include home-page-btn();
+        margin: 1em 0;
+        width: 13em;
+        padding: 1em;
+        border-radius: 20px;
+    } 
+    // admin btns
+    .link {
+        width: 16em;
+
+        &:hover {
+            width: 19em;
+        }
     }
     .bottom-btns {
         margin-top: 3em;
@@ -76,11 +106,13 @@
         }
     }
 }
+
 @include small-phone {
     .link {
         width: 16em;
-    }
-    .link:hover {
-        width: 18em;
+        
+        &:hover {
+            width: 18em;
+        }
     }
 }

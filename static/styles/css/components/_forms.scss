@@ -1,4 +1,4 @@
-@use "../../../abstracts/mixins" as *;
+@use "../abstracts/mixins" as *;
 
 // the submit button for all the forms above
 .submit {
@@ -69,7 +69,8 @@ form p {
     }
 
     form input {
-        @include phone-form-input(); 
+        @include form-input(); 
+        width: 19em;
         p {
             margin: .7em;
         }

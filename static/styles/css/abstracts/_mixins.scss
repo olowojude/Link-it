@@ -12,17 +12,10 @@
     display: block;
 }
 
-@mixin phone-form-input {
-    width: 19em;
-    background: #131212;;
-    outline: none;
-    padding: 1em .7em;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    margin-bottom: 1em;
-    display: block;
-    margin: 0 auto;
+@mixin tab {
+    @media (max-width: #{$tab}) {
+        @content;
+    }
 }
 
 @mixin big-phone {
@@ -31,7 +24,17 @@
     }
 }
 @mixin small-phone {
-    @media (max-width: #{$tab}) {
+    @media (max-width: #{$small-phone}) {
         @content;
     }
+}
+
+// home page btns mixins
+@mixin home-page-btn {
+    margin: 2em 0;
+    display: block;
+    width: 15em;
+    border-radius: 40px;
+    text-align: center;
+    padding: 2em;
 }

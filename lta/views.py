@@ -19,79 +19,12 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-# HOME PAGE
-
+# Home page view
 def home(request):
     return render(request, "lta/home.html")
 
 
-@login_required(login_url="loginpage")
-def admin(request):
-    links = Link.objects.all()
-
-    context = {"links": links, }
-    return render(request, "lta/admin.html", context)
-
-# preview
-
-
-def preview(request, username):
-    username = User.objects.get(username=username)
-    print(username)
-
-    # username = request.user.username
-    links = Link.objects.all()
-
-    context = {"links": links}
-    return render(request, "lta/preview.html", context)
-
-
-# TO ADD LINK PAGE
-@login_required(login_url="loginpage")
-def addlink(request):
-    addlinkform = AddLinkForm()
-    if request.method == "POST":
-        addlinkform = AddLinkForm(request.POST)
-        if addlinkform.is_valid():
-            addlinkform.save()
-            return redirect('admin')
-
-    context = {"addlinkform": addlinkform}
-    return render(request, "lta/addlink.html", context)
-
-
-# TO UPDATE LINK PAGE
-
-@login_required(login_url="loginpage")
-def updatelink(request, pk):
-    updatelink = Link.objects.get(id=pk)
-    updatelinkform = AddLinkForm(instance=updatelink)
-
-    if request.method == "POST":
-        updatelinkform = AddLinkForm(request.POST, instance=updatelink)
-        if updatelinkform.is_valid():
-            updatelinkform.save()
-            return redirect('admin')
-
-    context = {"updatelinkform": updatelinkform}
-    return render(request, "lta/updatelink.html", context)
-
-
-# TO DELETE LINK PAGE
-
-@login_required(login_url="loginpage")
-def deletelink(request, pk):
-    deletelink = Link.objects.get(id=pk)
-    if request.method == 'POST':
-        deletelink.delete()
-        return redirect("admin")
-
-    context = {"deletelink": deletelink}
-    return render(request, "lta/deletelink.html", context)
-
-
-# REGISTER PAGE
-
+# Register page view
 def register(request):
     if request.user.is_authenticated:
         return redirect('admin')
@@ -109,8 +42,7 @@ def register(request):
         return render(request, "lta/register.html", context)
 
 
-# LOGIN PAGE
-
+# Login page view
 def loginpage(request):
     if request.user.is_authenticated:
         return redirect('admin')
@@ -130,7 +62,68 @@ def loginpage(request):
         return render(request, "lta/login.html", context)
 
 
-# Update User profile
+# Admin page view
+@login_required(login_url="loginpage")
+def admin(request):
+    links = Link.objects.all()
+
+    context = {"links": links, }
+    return render(request, "lta/admin.html", context)
+
+
+# Preview page view
+def preview(request, username):
+    username = User.objects.get(username=username)
+
+    links = Link.objects.all()
+
+    context = {"links": links}
+    return render(request, "lta/preview.html", context)
+
+
+# Add link view
+@login_required(login_url="loginpage")
+def addlink(request):
+    addlinkform = AddLinkForm()
+    if request.method == "POST":
+        addlinkform = AddLinkForm(request.POST)
+        if addlinkform.is_valid():
+            addlinkform.save()
+            return redirect('admin')
+
+    context = {"addlinkform": addlinkform}
+    return render(request, "lta/addlink.html", context)
+
+
+# Update link view
+@login_required(login_url="loginpage")
+def updatelink(request, pk):
+    updatelink = Link.objects.get(id=pk)
+    updatelinkform = AddLinkForm(instance=updatelink)
+
+    if request.method == "POST":
+        updatelinkform = AddLinkForm(request.POST, instance=updatelink)
+        if updatelinkform.is_valid():
+            updatelinkform.save()
+            return redirect('admin')
+
+    context = {"updatelinkform": updatelinkform}
+    return render(request, "lta/updatelink.html", context)
+
+
+# Delete link view
+@login_required(login_url="loginpage")
+def deletelink(request, pk):
+    deletelink = Link.objects.get(id=pk)
+    if request.method == 'POST':
+        deletelink.delete()
+        return redirect("admin")
+
+    context = {"deletelink": deletelink}
+    return render(request, "lta/deletelink.html", context)
+
+
+# Update User profile view
 @login_required(login_url="loginpage")
 def updateProfile(request):
 
@@ -147,12 +140,12 @@ def updateProfile(request):
     return render(request, "lta/updateprofile.html", context)
 
 
-# LOGOUT PAGE
-
+# Logout view
 def logoutpage(request):
     logout(request)
     return redirect('loginpage')
 
 
+# 404 page view
 def notFound(request):
     return render(request, "lta/not-found.html")

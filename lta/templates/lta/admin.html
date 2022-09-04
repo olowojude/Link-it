@@ -11,8 +11,8 @@
     {% endif %}
   </div>
 
-  {% for link in links %}
   <ul class="links">
+    {% for link in links %}
     <li class="link">
       <a class="link-name" href="{{link.url}}">{{link.name}}</a>
     </li>
@@ -28,8 +28,9 @@
   {% empty %}
   <ul>
     <li class="link">You have no links, click the link below to add</li>
+    {% endfor %}
   </ul>
-  {% endfor %}
+
   <div class="bottom-btns">
     <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
     <a href="{% url 'preview' request.user.username %}" class="preview"

@@ -50,7 +50,6 @@ a {
   transition: 0.5s;
   background: #131212;
 }
-
 .link:hover {
   width: 35em;
 }
@@ -96,15 +95,50 @@ a {
   border: none;
 }
 
-@media (max-width: 500px) {
+.get-started-btn {
+  background: #13cf33;
+  margin: 2em 0;
+  display: block;
+  width: 15em;
+  border-radius: 40px;
+  text-align: center;
+  padding: 2em;
+}
+
+.login-btn {
+  text-decoration: underline;
+}
+
+@media (max-width: 890px) {
   .link {
+    width: 25em;
     padding: 1em 0.7em;
-    width: 18em;
     border-radius: 15px;
     transition: 0.7s;
   }
   .link:hover {
-    width: 22em;
+    width: 30em;
+  }
+}
+@media (max-width: 500px) {
+  .get-started-btn {
+    background: #13cf33;
+    margin: 2em 0;
+    display: block;
+    width: 15em;
+    border-radius: 40px;
+    text-align: center;
+    padding: 2em;
+    margin: 1em 0;
+    width: 13em;
+    padding: 1em;
+    border-radius: 20px;
+  }
+  .link {
+    width: 16em;
+  }
+  .link:hover {
+    width: 19em;
   }
   .bottom-btns {
     margin-top: 3em;
@@ -113,7 +147,7 @@ a {
     width: 10em;
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 350px) {
   .link {
     width: 16em;
   }
@@ -153,62 +187,6 @@ a {
     max-width: 18em;
   }
 }
-/* home page layout */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4em 0;
-}
-
-/* navbar component */
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 2em;
-  align-items: center;
-}
-
-.nav-links a {
-  margin: 0 1em;
-}
-
-@media (max-width: 500px) {
-  .navbar {
-    padding: 1.5em;
-  }
-}
-@media (max-width: 840px) {
-  .nav-links a {
-    margin: 0 0.5em;
-  }
-}
-.not-found-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.not-found-container img {
-  width: 70%;
-}
-
-.not-found-container p {
-  align-self: center;
-  margin: 0 2em;
-  width: 30%;
-  font-size: 2em;
-  font-style: italic;
-}
-
-.not-found-container p a {
-  background: linear-gradient(0deg, white, white);
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-  background-position: bottom;
-}
-
 .submit {
   cursor: pointer;
   margin-top: 1em;
@@ -282,7 +260,7 @@ form p {
     margin: 1em;
   }
   form input {
-    width: 19em;
+    width: 30em;
     background: #131212;
     outline: none;
     padding: 1em 0.7em;
@@ -291,12 +269,126 @@ form p {
     border: none;
     margin-bottom: 1em;
     display: block;
-    margin: 0 auto;
+    width: 19em;
   }
   form input p {
     margin: 0.7em;
   }
   #id_bio {
     width: 20em;
+  }
+}
+/* home page layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4em 0;
+}
+
+/* navbar component */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2em;
+  align-items: center;
+}
+
+.nav-links a {
+  margin: 0 1em;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 1.5em;
+  }
+}
+@media (max-width: 350px) {
+  .nav-links a {
+    margin: 0 0.5em;
+  }
+}
+.not-found-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.not-found-container img {
+  width: 70%;
+}
+.not-found-container p {
+  align-self: center;
+  margin: 0 2em;
+  width: 30%;
+  font-size: 2em;
+  font-style: italic;
+}
+.not-found-container p a {
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 890px) {
+  .not-found-container {
+    flex-direction: column;
+  }
+  .not-found-container img {
+    width: 100%;
+    margin-top: 3em;
+  }
+  .not-found-container p {
+    width: 100%;
+    text-align: center;
+    margin-top: 3em;
+  }
+}
+@media (max-width: 500px) {
+  .not-found-container p {
+    font-size: 1.2em;
+  }
+}
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 5em 2em;
+}
+.home-container img {
+  border-radius: 30px;
+  width: 35em;
+  height: 32em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home-container div {
+  align-self: center;
+}
+
+@media (max-width: 890px) {
+  .home-container {
+    flex-direction: column;
+  }
+  img {
+    display: block;
+    margin: 1em auto;
+  }
+  .text {
+    margin-top: 3em;
+  }
+}
+@media (max-width: 500px) {
+  .home-container img {
+    width: 18em;
+    height: 17em;
+    margin: 1em auto;
+  }
+  .text p {
+    margin-top: 2em;
+  }
+}
+@media (max-width: 350px) {
+  .home-container img {
+    width: 16em;
+    height: 17em;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,1 +1,23 @@
-{% extends 'lta/preview-main.html' %} {% block content %} {% endblock %}
+{% extends 'lta/preview-main.html' %} {% load static %} {% block content %}
+<div class="home-container">
+  <img src="{% static 'images/links.png' %}" alt="" />
+  <div class="text">
+    <h3>Grow, own and engage your audience by unifying them in one place.</h3>
+
+    <p class="home-p-tag">
+      Easily connect all your socials, websites into one single page.
+    </p>
+
+    <p>
+      <a href="{% url 'register' %} " class="get-started-btn">
+        Get started for free
+      </a>
+    </p>
+
+    <p>
+      Already have an account?
+      <a href="{% url 'loginpage' %}" class="login-btn">Login</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
