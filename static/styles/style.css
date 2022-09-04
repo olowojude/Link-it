@@ -37,6 +37,10 @@ a {
   text-align: justify;
 }
 
+.home-p-tag {
+  margin-top: 1em;
+}
+
 /* links components */
 .links {
   margin: 1em;
@@ -102,7 +106,7 @@ a {
   width: 15em;
   border-radius: 40px;
   text-align: center;
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .login-btn {
@@ -128,7 +132,7 @@ a {
     width: 15em;
     border-radius: 40px;
     text-align: center;
-    padding: 2em;
+    padding: 1.5em;
     margin: 1em 0;
     width: 13em;
     padding: 1em;
@@ -193,10 +197,6 @@ a {
   text-align: center;
 }
 
-.update-link-submit-btn {
-  margin-left: 1.2em;
-}
-
 form input {
   width: 30em;
   background: #131212;
@@ -207,6 +207,7 @@ form input {
   border: none;
   margin-bottom: 1em;
   display: block;
+  margin: 0 auto;
 }
 
 form p {
@@ -269,6 +270,7 @@ form p {
     border: none;
     margin-bottom: 1em;
     display: block;
+    margin: 0 auto;
     width: 19em;
   }
   form input p {

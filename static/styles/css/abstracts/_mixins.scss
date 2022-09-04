@@ -10,6 +10,7 @@
     border: none;
     margin-bottom: 1em;
     display: block;
+    margin: 0 auto;
 }
 
 @mixin tab {
@@ -36,5 +37,5 @@
     width: 15em;
     border-radius: 40px;
     text-align: center;
-    padding: 2em;
+    padding: 1.5em;
 }
