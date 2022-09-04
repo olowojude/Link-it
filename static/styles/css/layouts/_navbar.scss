@@ -9,10 +9,12 @@
     align-items: center;
 }
 
-.nav-links a {
+.nav-links {
+    
+    a {
     margin: 0 1em;
+    }
 }
-
 // media queries
 @include big-phone {
     .navbar {

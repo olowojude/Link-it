@@ -1,9 +1,21 @@
+// abstracts
 @use "./css/abstracts/mixins";
 @use "./css/abstracts/variables";
+
+// base
 @use "./css/base/typography";
-@use "./css/components/buttonComponent/button";
-@use "./css/components/profileComponent/profile";
+
+// components
+@use "./css/components/button";
+@use "./css/components/profile";
+@use "./css/components/forms";
+
+// layouts
 @use "./css/layouts/containers";
 @use "./css/layouts/navbar";
-@use "./css/layouts/notFound";
-@use "./css/components/formsComponents/forms/forms";
+
+// pages
+@use "./css/pages/notFound";
+@use "./css/pages/homePage";
+
+

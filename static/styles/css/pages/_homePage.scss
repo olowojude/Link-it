@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as *;
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 5em 2em;
+
+    img {
+        border-radius: 30px;
+        width: 35em;
+        height: 32em;
+        object-fit: cover;
+    }
+
+    div {
+        align-self: center;
+    }
+}
+
+@include tab {
+    .home-container {
+        flex-direction: column;
+    }
+    img {
+        display: block;
+        margin: 1em auto;
+    }
+    .text {
+        margin-top: 3em;
+    }
+}
+
+@include big-phone {
+    .home-container img {
+        width: 18em;
+        height: 17em;
+        margin: 1em auto;
+    }
+    .text p {
+        margin-top: 2em;
+    }
+    
+}
+
+@include small-phone {
+    .home-container img {
+        width: 16em;
+        height: 17em;
+    }
+}
