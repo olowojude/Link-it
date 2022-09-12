@@ -4,6 +4,7 @@
 
 // base
 @use "./css/base/typography";
+@use "./css/base/global";
 
 // components
 @use "./css/components/button";
@@ -17,5 +18,7 @@
 // pages
 @use "./css/pages/notFound";
 @use "./css/pages/homePage";
+@use "./css/pages/deletePage";
+@use "./css/pages/passwordReset";
 
 

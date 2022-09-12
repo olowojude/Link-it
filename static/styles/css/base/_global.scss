@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+    color: white;
+}
+body {
+    background: $background-image;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.not-found-text a {
+    text-align: center;
+    font-size: 2em;
+}

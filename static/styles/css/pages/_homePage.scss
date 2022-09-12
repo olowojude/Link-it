@@ -17,7 +17,10 @@
         align-self: center;
     }
 }
-
+// home p tag 
+.home-p-tag {
+    margin-top: 1em;
+}
 @include tab {
     .home-container {
         flex-direction: column;

@@ -1,6 +1,7 @@
 @use "../abstracts/mixins" as *;
 
 
+
 /* links components */
 .links {
     margin: 1em;
@@ -12,7 +13,7 @@
     border-radius: 20px;
     width: 30em;
     transition: .5s;
-    background: #131212;
+    background: #1d1c1c;
 
     &:hover {
         width: 35em;
