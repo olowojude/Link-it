@@ -16,14 +16,7 @@
     <li class="link">
       <a class="link-name" href="{{link.url}}">{{link.name}}</a>
     </li>
-    <div class="edit-delete-link-container">
-      <a class="edit" href="{% url 'updatelink' link.id %}"
-        >Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i
-      ></a>
-      <a class="delete" href="{% url 'deletelink' link.id %}"
-        ><i class="fa fa-trash-o" aria-hidden="true"></i
-      ></a>
-    </div>
+    <!-- <div class="edit-delete-link-container"></div> -->
   </ul>
   {% empty %}
   <ul>

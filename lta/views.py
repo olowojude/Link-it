@@ -1,5 +1,6 @@
 from msilib.schema import File
 from re import L
+from urllib import request
 
 from django.shortcuts import render, redirect
 
@@ -66,8 +67,9 @@ def loginpage(request):
 @login_required(login_url="loginpage")
 def admin(request):
     links = Link.objects.all()
-
-    context = {"links": links, }
+    context = {
+        "links": links
+    }
     return render(request, "lta/admin.html", context)
 
 
@@ -75,28 +77,28 @@ def admin(request):
 def preview(request, username):
     username = User.objects.get(username=username)
 
-    links = Link.objects.all()
-
-    context = {"links": links}
+    context = {}
     return render(request, "lta/preview.html", context)
 
 
 # Add link view
-@login_required(login_url="loginpage")
+@ login_required(login_url="loginpage")
 def addlink(request):
     addlinkform = AddLinkForm()
     if request.method == "POST":
         addlinkform = AddLinkForm(request.POST)
         if addlinkform.is_valid():
             addlinkform.save()
-            return redirect('admin')
+            return redirect("admin")
+    else:
+        addlinkform = AddLinkForm()
 
     context = {"addlinkform": addlinkform}
     return render(request, "lta/addlink.html", context)
 
 
 # Update link view
-@login_required(login_url="loginpage")
+@ login_required(login_url="loginpage")
 def updatelink(request, pk):
     updatelink = Link.objects.get(id=pk)
     updatelinkform = AddLinkForm(instance=updatelink)
@@ -112,7 +114,7 @@ def updatelink(request, pk):
 
 
 # Delete link view
-@login_required(login_url="loginpage")
+@ login_required(login_url="loginpage")
 def deletelink(request, pk):
     deletelink = Link.objects.get(id=pk)
     if request.method == 'POST':
@@ -124,7 +126,7 @@ def deletelink(request, pk):
 
 
 # Update User profile view
-@login_required(login_url="loginpage")
+@ login_required(login_url="loginpage")
 def updateProfile(request):
 
     user = request.user
