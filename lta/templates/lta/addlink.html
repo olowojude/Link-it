@@ -1,6 +1,6 @@
 {% extends 'lta/main.html' %} {% block content %}
 <div class="container addlink">
-  <form action="{% url 'admin' %}" method="POST">
+  <form action="" method="POST">
     {% csrf_token %} {{ addlinkform.as_p }}
     <input type="submit" class="submit" value="Submit" />
   </form>

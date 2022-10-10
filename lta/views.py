@@ -67,6 +67,7 @@ def loginpage(request):
 @login_required(login_url="loginpage")
 def admin(request):
     links = Link.objects.all()
+
     context = {
         "links": links
     }
@@ -76,20 +77,23 @@ def admin(request):
 # Preview page view
 def preview(request, username):
     username = User.objects.get(username=username)
-
-    context = {}
+    links = Link.objects.all()
+    context = {
+        "links": links
+    }
     return render(request, "lta/preview.html", context)
 
 
 # Add link view
-@ login_required(login_url="loginpage")
+@login_required(login_url="loginpage")
 def addlink(request):
+
     addlinkform = AddLinkForm()
     if request.method == "POST":
         addlinkform = AddLinkForm(request.POST)
         if addlinkform.is_valid():
             addlinkform.save()
-            return redirect("admin")
+        return redirect('admin')
     else:
         addlinkform = AddLinkForm()
 
