@@ -74,21 +74,10 @@ def admin(request):
     return render(request, "lta/admin.html", context)
 
 
-# Preview page view
-def preview(request, username):
-    username = User.objects.get(username=username)
-    links = Link.objects.all()
-    context = {
-        "links": links
-    }
-    return render(request, "lta/preview.html", context)
-
-
 # Add link view
 @login_required(login_url="loginpage")
 def addlink(request):
 
-    addlinkform = AddLinkForm()
     if request.method == "POST":
         addlinkform = AddLinkForm(request.POST)
         if addlinkform.is_valid():
@@ -144,6 +133,16 @@ def updateProfile(request):
 
     context = {"form": form}
     return render(request, "lta/updateprofile.html", context)
+
+
+# Preview page view
+def preview(request, username):
+    username = User.objects.get(username=username)
+    links = Link.objects.all()
+    context = {
+        "links": links
+    }
+    return render(request, "lta/preview.html", context)
 
 
 # Logout view
