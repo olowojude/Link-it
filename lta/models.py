@@ -4,14 +4,6 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
-class Link(models.Model):
-    name = models.CharField(max_length=15)
-    url = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
 class User(AbstractUser):
     name = models.CharField(max_length=200, null=True)
     email = models.EmailField(unique=True, null=True)
@@ -21,3 +13,12 @@ class User(AbstractUser):
 
     USERNAME_FIELDS = "email"
     REQUIRED_FIELDS = []
+
+
+class Link(models.Model):
+    name = models.CharField(max_length=15)
+    url = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.name

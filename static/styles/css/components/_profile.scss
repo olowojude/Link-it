@@ -1,4 +1,4 @@
-@use "../abstracts/mixins"  as *;
+@use "../abstracts/mixins" as *;
 
 /* profile section component */
 .profile-section {
@@ -8,12 +8,13 @@
     img {
         display: block;
         margin: 1em auto;
-        width: 8em;
-        height: 8em;
+        width: 10em;
+        height: 10em;
         border-radius: 50%;
         background-position: center;
-        object-fit: contain;
+        object-fit: cover;
     }
+
     .bio {
         max-width: 30em;
         display: block;
@@ -32,6 +33,7 @@
             width: 7em;
             height: 7em;
         }
+
         .bio {
             max-width: 18em;
         }

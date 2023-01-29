@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class AddLinkForm(ModelForm):
     class Meta:
         model = Link
-        fields = '__all__'
+        fields = ["name", "url"]
 
 
 class RegisterForm(UserCreationForm):

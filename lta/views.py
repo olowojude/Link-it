@@ -66,7 +66,7 @@ def loginpage(request):
 # Admin page view
 @login_required(login_url="loginpage")
 def admin(request):
-    links = Link.objects.all()
+    links = Link.objects.filter(user=request.user)
 
     context = {
         "links": links
@@ -81,7 +81,9 @@ def addlink(request):
     if request.method == "POST":
         addlinkform = AddLinkForm(request.POST)
         if addlinkform.is_valid():
-            addlinkform.save()
+            form = addlinkform.save(commit=False)
+            form.user = request.user
+            form.save()
         return redirect('admin')
     else:
         addlinkform = AddLinkForm()
@@ -138,7 +140,8 @@ def updateProfile(request):
 # Preview page view
 def preview(request, username):
     username = User.objects.get(username=username)
-    links = Link.objects.all()
+    links = Link.objects.filter(user=request.user)
+
     context = {
         "links": links
     }

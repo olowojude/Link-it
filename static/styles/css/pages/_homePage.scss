@@ -17,18 +17,22 @@
         align-self: center;
     }
 }
+
 // home p tag 
 .home-p-tag {
     margin-top: 1em;
 }
+
 @include tab {
     .home-container {
         flex-direction: column;
     }
+
     img {
         display: block;
         margin: 1em auto;
     }
+
     .text {
         margin-top: 3em;
     }
@@ -40,10 +44,11 @@
         height: 17em;
         margin: 1em auto;
     }
+
     .text p {
         margin-top: 2em;
     }
-    
+
 }
 
 @include small-phone {
